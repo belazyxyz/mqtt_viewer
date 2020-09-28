@@ -5,7 +5,7 @@ A small Test application to show how to use Flask-MQTT.
 """
 import os
 try:
-    if 'MQTT_SERVER' in os.environ:
+    if 'MQTT_SERVER' in os.environ and os.environ['MQTT_SERVER'] != '':
         print(os.environ['MQTT_SERVER'])
         mqtt_server = (os.environ['MQTT_SERVER'])
     else:
