@@ -1,0 +1,17 @@
+---
+version: '3.1'
+services:
+  mqtt_server:
+    image: eclipse-mosquitto
+    container_name: mqtt_server
+    restart: unless-stopped
+    ports:
+    - 1883:1883
+  mqtt_viewer:
+    image: belazy/mu_mqtt:latest
+    container_name: mqtt_viewer
+    restart: unless-stopped
+    ports:
+    - 5000:5000
+    environment:
+      MQTT_SERVER: 192.168.0.6
