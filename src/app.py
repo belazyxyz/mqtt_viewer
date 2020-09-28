@@ -8,7 +8,7 @@ try:
     print(os.environ['MQTT_SERVER'])
     mqtt_server = (os.environ['MQTT_SERVER'])
 except:
-    mqtt_server = 'localhost'
+    mqtt_server = 'broker.hivemq.com'
 
 import eventlet
 import json
