@@ -19,7 +19,8 @@ Usage
 
 Create `docker-compose.yml`
 
-.. code-block:: yaml
+.. code-block::
+
     ---
     version: '3.1'
     services:
