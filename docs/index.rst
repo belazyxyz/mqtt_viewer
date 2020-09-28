@@ -48,4 +48,4 @@ Create ``docker-compose.yml``
 
 This should create two docker containers one is for running mqtt server and another one is to view the mqtt broker messages
 
-Open the application on browser ``http://localhose:5000``
+Open the application on browser ``http://localhost:5000``
