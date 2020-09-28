@@ -17,15 +17,25 @@ mu_mqtt created to view the MQTT broker messages
 Usage
 ==================
 
-.. code-block:: python
+Create `docker-compose.yml`
 
-   from mutcm import TCMParser
+.. code-block:: yaml
+    ---
+    version: '3.1'
+    services:
+    mqtt_server:
+        image: eclipse-mosquitto
+        container_name: mqtt_server
+        restart: unless-stopped
+        ports:
+        - 1883:1883
+    mqtt_viewer:
+        image: belazy/mu_mqtt:latest
+        container_name: mqtt_viewer
+        restart: unless-stopped
+        ports:
+        - 5000:5000
+        environment:
+        MQTT_SERVER: 192.168.0.6
 
-   tcm = TCMParser('cases')
-   print(tcm.case_runs)
-   # this should returns the JSON object with all runs
-
-   @pytest.mark.parametrize("data", tcm.case_runs)
-   def test_api(data):
-      print(data)
-      assert tcm.api_test(data) == data['expected']
+>>> docker-compose up -d
