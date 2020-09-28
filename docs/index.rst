@@ -12,7 +12,11 @@ mu_mqtt created to view the MQTT broker messages
    :maxdepth: 2
    :caption: Contents:
 
+Getting started
+==================
 
+1. Install Docker on your machine
+2. Install Docker compose
 
 Usage
 ==================
@@ -38,6 +42,6 @@ Create ``docker-compose.yml``
         ports:
         - 5000:5000
         environment:
-        MQTT_SERVER: 192.168.0.6
+            MQTT_SERVER: 192.168.0.6
 
 >>> docker-compose up -d
