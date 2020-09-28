@@ -47,7 +47,7 @@ bootstrap = Bootstrap(app)
 @app.route('/')
 def index():
     app.config['MQTT_BROKER_URL'] = 'localhost'
-    return render_template('index.html')
+    return render_template('index.html', mqtt_server=mqtt_server)
 
 @socketio.on('publish')
 def handle_publish(json_str):
