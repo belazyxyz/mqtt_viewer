@@ -17,11 +17,12 @@ mu_mqtt created to view the MQTT broker messages
 Usage
 ==================
 
-Create `docker-compose.yml`
+Create ``docker-compose.yml``
 
-.. code-block::
+.. code:: yaml
 
     ---
+    # .docker-compose.yml
     version: '3.1'
     services:
     mqtt_server:
