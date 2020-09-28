@@ -39,9 +39,10 @@
 
     socket.on('mqtt_message', function(data) {
       console.log(data);
-      var text = '(' + data['topic'] + ' qos: ' + data['qos'] + ') ' + data['payload'];
+      var text =data['payload'];
       var $textarea = $('#subscribe_messages');
       $textarea.val($textarea.val() + text + '\n');
+      $("#current_msg").html(data['payload'])
     })
   });
 </script>
@@ -131,6 +132,7 @@
                 <div class="form-group">
                   <label class="control-label col-xs-4">Messages:</label>
                   <div class="col-xs-8">
+                    <div id='current_msg'></div>
                     <textarea id="subscribe_messages" class="form-control" rows=10></textarea>
                   </div>
                 </div>
